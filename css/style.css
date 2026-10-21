@@ -1,0 +1,104 @@
+/* ===== Whole page ===== */
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: #F7F9F4;
+    color: #3F4A37;
+    margin: 0px;
+}
+
+/* ===== Header ===== */
+div.header {
+    background-color: white;
+    text-align: center;
+    padding: 15px;
+    border-bottom: 4px solid #C9DBB1;
+}
+
+div.header h1 {
+    color: #61714D;
+    font-size: 36px;
+}
+
+div.header p {
+    color: #8FA870;
+    font-style: italic;
+}
+
+/* ===== Menu ===== */
+div.menu {
+    background-color: #61714D;
+    text-align: center;
+    padding: 12px;
+}
+
+div.menu ul {
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+    line-height: 200%;
+}
+
+div.menu li {
+    display: inline;
+    margin: 0px 10px;
+}
+
+div.menu a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* ===== Footer ===== */
+div.footer {
+    text-align: center;
+    padding: 15px;
+    margin-top: 30px;
+    border-top: 4px solid #C9DBB1;
+    font-size: 14px;
+    color: #61714D;
+}
+
+/* ===== Main content ===== */
+div.main {
+    padding: 20px 40px;
+}
+
+div.main h2 {
+    color: #61714D;
+}
+
+/* ===== Link states (all links) ===== */
+a:link {
+    color: #61714D;
+}
+
+a:visited {
+    color: #8FA870;
+}
+
+a:hover {
+    color: #D4A88C;
+}
+
+a:active {
+    color: #3F4A37;
+}
+
+/* ===== Menu link hover ===== */
+div.menu a:hover {
+    color: #D4A88C;
+    text-decoration: underline;
+}
+/* ===== id selector ===== */
+#logo {
+    width: 70px;
+}
+/* ===== Generic selector ===== */
+.highlight {
+    color: #D4A88C;
+    font-weight: bold;
+}
