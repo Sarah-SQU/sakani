@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sakani - Bus Schedule</title>
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Internal CSS: styles used only in this page -->
+    <style type="text/css">
+        /* ===== Service hours box ===== */
+        p.hours {
+            background-color: white;
+            border: 2px solid #C9DBB1;
+            padding: 12px;
+            text-align: center;
+            font-size: 18px;
+        }
+
+        span.hours-label {
+            color: #61714D;
+            font-weight: bold;
+        }
+
+        /* ===== Times table ===== */
+        table.bus {
+            width: 100%;
+            background-color: white;
+            border-color: #8FA870;
+        }
+
+        table.bus caption {
+            font-size: 20px;
+            font-weight: bold;
+            color: #61714D;
+            margin-bottom: 10px;
+        }
+
+        table.bus th {
+            background-color: #61714D;
+            color: white;
+        }
+
+        th.sub {
+            background-color: #8FA870;
+        }
+
+        td.alt {
+            background-color: #EEF3E6;
+        }
+
+        td.green {
+            background-color: #C9DBB1;
+            color: #3F4A37;
+            font-weight: bold;
+        }
+
+        td.red {
+            background-color: #F2D1C9;
+            color: #8B3A2B;
+            font-weight: bold;
+        }
+
+        td.freq {
+            font-size: 18px;
+            font-weight: bold;
+            color: #61714D;
+        }
+
+        td.evening {
+            background-color: #F7F9F4;
+            font-style: italic;
+        }
+
+        tr.note td {
+            background-color: #F7F9F4;
+            color: #61714D;
+            font-weight: bold;
+        }
+
+        /* ===== Routes ===== */
+        div.main h3 {
+            color: #61714D;
+            margin-top: 30px;
+        }
+
+        ol.route {
+            list-style-type: decimal;
+            line-height: 170%;
+        }
+
+        p.green-title {
+            background-color: #C9DBB1;
+            color: #3F4A37;
+            font-weight: bold;
+            padding: 8px;
+        }
+
+        p.red-title {
+            background-color: #F2D1C9;
+            color: #8B3A2B;
+            font-weight: bold;
+            padding: 8px;
+        }
+
+        /* ===== Tips box ===== */
+        div.tips {
+            background-color: white;
+            border-left: 5px solid #D4A88C;
+            padding: 10px 20px;
+            margin-top: 30px;
+        }
+
+        div.tips h4 {
+            color: #61714D;
+        }
+
+        ul.tips-list {
+            list-style-type: circle;
+            line-height: 170%;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <!-- logo + site name -->
+        <img src="images/sakani_icon.PNG" alt="Sakani logo" id="logo">
+        <h1>Sakani</h1>
+        <p>Your dorm, made simple</p>
+    </div>
+
+    <div class="menu">
+        <!-- navigation links -->
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="checkin.html">Check-in</a></li>
+            <li><a href="study-rooms.html">Study Rooms</a></li>
+            <li><a href="laundry.html">Laundry</a></li>
+            <li><a href="bus.html">Bus Schedule</a></li>
+            <li><a href="room-change.html">Room Change</a></li>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="login.html">Login</a></li>
+        </ul>
+    </div>
+
+    <div class="main">
+        <!-- page content -->
+        <h2>Bus Schedule</h2>
+        <p>This page shows when the female students' buses reach your housing complex,
+           and the stops on each bus route.</p>
+
+        <p class="hours">
+            <span class="hours-label">Service Hours:</span> Sunday - Thursday, 7:00 AM - 6:00 PM
+        </p>
+
+        <!-- ===== Times table ===== -->
+        <table class="bus" border="2" cellspacing="3" cellpadding="10">
+            <caption>Bus Times at the Housing Complexes</caption>
+
+            <tr>
+                <th rowspan="2">Housing Complex</th>
+                <th rowspan="2">Route</th>
+                <th colspan="2">Daytime (6:00 AM - 6:00 PM)</th>
+                <th rowspan="2">After 6:00 PM</th>
+            </tr>
+            <tr>
+                <th class="sub">Morning</th>
+                <th class="sub">Afternoon</th>
+            </tr>
+
+            <tr>
+                <td>Housing Complex 1</td>
+                <td class="red" rowspan="3" align="center">Red</td>
+                <td class="freq" rowspan="5" colspan="2" align="center">Every 20 minutes</td>
+                <td class="evening" rowspan="5" align="center">
+                    Sometimes available:<br>
+                    one route to the housing complexes only
+                </td>
+            </tr>
+            <tr>
+                <td class="alt">Housing Complex 2</td>
+            </tr>
+            <tr>
+                <td>Housing Complex 3</td>
+            </tr>
+            <tr>
+                <td class="alt">Housing Complex 4</td>
+                <td class="green" rowspan="2" align="center">Green</td>
+            </tr>
+            <tr>
+                <td>Housing Complex 5</td>
+            </tr>
+
+            <tr class="note">
+                <td colspan="5" align="center">
+                    All buses start and end at the meeting point: College of Arts and Buildings E and F
+                </td>
+            </tr>
+        </table>
+
+        <!-- ===== Routes explanation ===== -->
+        <h3>Bus Routes</h3>
+        <p>From the meeting point, the buses split into two routes.
+           The <b>College of Law</b> and the <b>Main Library</b> are shared stops,
+           so you can take either route from there.</p>
+
+        <p class="green-title">Green Route</p>
+        <ol class="route">
+            <li>College of Science</li>
+            <li>College of Engineering</li>
+            <li>College of Law</li>
+            <li>Main Library</li>
+            <li>Housing Complex 4</li>
+            <li>Housing Complex 5</li>
+            <li>Back to the meeting point</li>
+        </ol>
+
+        <p class="red-title">Red Route</p>
+        <ol class="route">
+            <li>Housing Complex 1</li>
+            <li>Housing Complex 2</li>
+            <li>Housing Complex 3 and College of Nursing</li>
+            <li>College of Law</li>
+            <li>Main Library</li>
+            <li>College of Medicine</li>
+            <li>College of Education and College of Agriculture</li>
+            <li>Back to the meeting point</li>
+        </ol>
+
+        <!-- ===== Tips box ===== -->
+        <div class="tips">
+            <h4>Bus Tips</h4>
+            <ul class="tips-list">
+                <li>Be at the bus stop 5 minutes before the bus arrives.</li>
+                <li>Keep your student ID card with you.</li>
+                <li>Check the route color before you get on the bus.</li>
+            </ul>
+        </div>
+
+        <!-- Inline CSS example -->
+        <p style="color: #8FA870; font-size: 14px;">Bus times may change during exams and holidays.</p>
+    </div>
+
+    <div class="footer">
+        <!-- footer content -->
+        <p><a href="about.html">About Us</a> | <a href="contact.html">Contact Us</a></p>
+        <p>Email: <a href="mailto:s143646@student.squ.edu.om">s143646@student.squ.edu.om</a></p>
+        <p>(c) 2026 Sakani - Web Craft Team | Sultan Qaboos University</p>
+    </div>
+
+</body>
+</html>
