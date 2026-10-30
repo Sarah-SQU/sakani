@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sakani - Laundry</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        label {
+            display: inline-block;
+            width: 140px;
+        }
+        
+        form {
+            border: 1px solid #61714D;
+            padding: 15px;
+            width: 400px;
+            background-color: #EEF3E6
+        }
+        table {
+            border-collapse: collapse;
+            width: 80%;
+            margin-top: 10px;
+        }
+
+        th, td {
+            border: 1px solid black;
+            background-color: white;
+            border: 1px solid #6f8755;
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #8FA870;
+        }
+
+        input, select {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <!-- logo + site name -->
+        <img src="images/sakani_icon.PNG" alt="Sakani logo" id="logo">
+        <h1>Sakani</h1>
+        <p>Your dorm, made simple</p>
+    </div>
+
+    <div class="menu">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="checkin.html">Check-in</a></li>
+            <li><a href="study-rooms.html">Study Rooms</a></li>
+            <li><a href="laundry.html">Laundry</a></li>
+            <li><a href="bus.html">Bus Schedule</a></li>
+            <li><a href="room-change.html">Room Change</a></li>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="login.html">Login</a></li>
+        </ul>
+    </div>
+
+    <div class="main">
+        <h2>Laundry Booking</h2>
+        <p>Choose a laundry location and a suitable time slot.</p>
+
+        <h3>Laundry Schedule</h3>
+        <table>
+            <tr><th>Location</th><th>Machine</th><th>Available Time</th></tr>
+            <tr><td>Building 1</td><td>Washer 1</td><td>9:00 AM</td></tr>
+            <tr><td>Building 1</td><td>Washer 2</td><td>11:00 AM</td></tr>
+            <tr><td>Building 2</td><td colspan="2">Check with the supervisor</td></tr>
+        </table>
+        <br>
+        <h3>Reserve a Time</h3><br>
+        <form action="https://httpbin.org/get" method="get">
+            <label for="laundry-name">Student name:</label>
+            <input type="text" id="laundry-name" name="student_name" required>
+            <br>
+            <label for="building">Choose a building:</label>
+            <select id="building" name="building" required>
+                <option value="">-- Select a building --</option>
+                <option value="Building 1">Building 1</option>
+                <option value="Building 2">Building 2</option>
+            </select>
+            <br>
+            <label for="machine">Machine number:</label>
+            <select id="machine" name="machine" required>
+                <option value="Washer 1">Washer 1</option>
+                <option value="Washer 2">Washer 2</option>
+            </select>
+            <br>
+            <label for="laundry-date">Date:</label>
+            <input type="date" id="laundry-date" name="laundry_date" required>
+            <br>
+            <label for="slot">Time slot:</label>
+            <select id="slot" name="time_slot">
+                <option value="9:00 AM">9:00 AM</option>
+                <option value="11:00 AM">11:00 AM</option>
+                <option value="1:00 PM">1:00 PM</option>
+            </select>
+            <br>
+
+            <input type="submit" value="Request Laundry Slot">
+            <input type="reset" value="Clear">
+        </form>
+    </div>
+
+    <div class="footer">
+        <p><a href="about.html">About Us</a> | <a href="contact.html">Contact Us</a></p>
+        <p>Email: <a href="mailto:s143646@student.squ.edu.om">s143646@student.squ.edu.om</a></p>
+        <p>(c) 2026 Sakani - Web Craft Team | Sultan Qaboos University</p>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sakani - Checkin</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+
+    label {
+            display: inline-block;
+            width: 120px;
+        }
+
+    input, select {
+            margin-bottom: 10px;
+        }
+        
+    form {
+            border: 1px solid #61714D;
+            padding: 15px;
+            width: 400px;
+            background-color: #EEF3E6
+        }
+
+    table {
+        border-collapse: collapse;
+        width: 80%;
+        background-color: #f9f9f9;
+    }
+
+    table th {
+        background-color: #8FA870;
+        color: white;
+        border: 1px solid black;
+        padding: 8px;
+    }
+
+   table td {
+        border: 1px solid black;
+        padding: 8px;
+    }
+</style>
+</head>
+<body>
+
+    <div class="header">
+        <!-- logo + site name -->
+        <img src="images/sakani_icon.PNG" alt="Sakani logo" id="logo">
+        <h1>Sakani</h1>
+        <p>Your dorm, made simple</p>
+    </div>
+
+    <div class="menu">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="checkin.html">Check-in</a></li>
+            <li><a href="study-rooms.html">Study Rooms</a></li>
+            <li><a href="laundry.html">Laundry</a></li>
+            <li><a href="bus.html">Bus Schedule</a></li>
+            <li><a href="room-change.html">Room Change</a></li>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="login.html">Login</a></li>
+        </ul>
+    </div>
+
+    <div class="main">
+        <h2>Nightly Check-in</h2>
+
+        <form action="https://httpbin.org/get" method="get">
+            <label for="student-name">Student name:</label>
+            <input type="text" id="student-name" name="student_name" required>
+            <br></br>
+            <label for="student-id">Student ID:</label>
+            <input type="text" id="student-id" name="id" required>
+            <br></br>
+            <label for="student-name">Room number:</label>
+            <input type="text" id="student-room" name="student_room" required>
+            <br></br>
+            <label for="checkin-date">Date:</label>
+            <input type="date" id="checkin-date" name="checkin_date" required>
+            <br></br>
+            <label for="arrival-time">Expected arrival time:</label>
+            <input type="time" id="arrival-time" name="arrival_time" required>
+            <br></br>
+            <p style="color: rgb(73, 181, 85);"><strong>Will you arrive before 10:00 PM?</strong></p>
+            <input type="radio" id="before" name="before_ten" value="yes" required>
+            <label for="before" style="display:inline;">Yes</label>
+            <input type="radio" id="after" name="before_ten" value="no">
+            <label for="after" style="display:inline;">No</label>
+
+            <br></br>
+            <input type="submit" value="Submit Check-in">
+            <input type="reset" value="Clear">
+        </form>
+
+        <h3 style="color: rgb(86, 173, 96);">Previous Check-ins</h3>
+        <table>
+            <tr><th>Date</th><th>Arrival Time</th><th>Status</th></tr>
+            <tr><td>25 October 2026</td><td>8:15 PM</td><td>Recorded</td></tr>
+            <tr><td>24 October 2026</td><td>9:00 PM</td><td>Recorded</td></tr>
+        </table>
+    </div>
+
+    <div class="footer">
+        <p><a href="about.html">About Us</a> | <a href="contact.html">Contact Us</a></p>
+        <p>Email: <a href="mailto:s143646@student.squ.edu.om">s143646@student.squ.edu.om</a></p>
+        <p>(c) 2026 Sakani - Web Craft Team | Sultan Qaboos University</p>
+    </div>
+
+</body>
+</html>

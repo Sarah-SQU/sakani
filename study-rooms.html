@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sakani - Study Rooms</title>
+    <link rel="stylesheet" href="css/style.css">
+    
+    <style>
+    label {
+            display: inline-block;
+            width: 140px;
+        }
+
+    input, select {
+            margin-bottom: 10px;
+        }
+
+
+        form {
+            border: 1px solid #61714D;
+            padding: 15px;
+            width: 400px;
+            background-color: #EEF3E6
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 80%;
+            margin-top: 10px;
+        }
+
+        th, td {
+            border: 1px solid black;
+            background-color: white;
+            border: 1px solid #6f8755;
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #8FA870;
+        }
+
+        
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <!-- logo + site name -->
+        <img src="images/sakani_icon.PNG" alt="Sakani logo" id="logo">
+        <h1>Sakani</h1>
+        <p>Your dorm, made simple</p>
+    </div>
+
+    <div class="menu">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="checkin.html">Check-in</a></li>
+            <li><a href="study-rooms.html">Study Rooms</a></li>
+            <li><a href="laundry.html">Laundry</a></li>
+            <li><a href="bus.html">Bus Schedule</a></li>
+            <li><a href="room-change.html">Room Change</a></li>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="login.html">Login</a></li>
+        </ul>
+    </div>
+
+    <div class="main">
+        <h2>Study Room Booking</h2>
+        <p>Choose a room and time for your study session.</p>
+
+        <h3>Available Study Rooms</h3>
+        <table>
+            <tr><th>Room</th><th>Capacity</th><th>Location</th></tr>
+            <tr><td>Room A</td><td>4 students</td><td>Building 1</td></tr>
+            <tr><td>Room B</td><td>6 students</td><td>Building 1</td></tr>
+            <tr><td>Room C</td><td colspan="2">Temporarily unavailable</td></tr>
+        </table>
+        <br>
+        <h3>Booking Form</h3>
+        <form action="https://httpbin.org/get" method="get">
+            <label for="booking-name">Student name:</label>
+            <input type="text" id="booking-name" name="student_name" required>
+            <br>
+            <label for="room">Choose a room:</label>
+            <select id="room" name="room" required>
+                <option value="">-- Select a room --</option>
+                <option value="Room A">Room A</option>
+                <option value="Room B">Room B</option>
+            </select>
+            <br>
+            <label for="study-date">Booking date:</label>
+            <input type="date" id="study-date" name="booking_date" required>
+            <br>
+            <label for="start-time">Start time:</label>
+            <input type="time" id="start-time" name="start_time" required>
+            <br>
+            <label for="study-time">Session duration:</label>
+            <input type="radio" id="one_hour" name="study-time" value="1 hour" required>
+            <label for="one_hour" style="display:inline;">1 hour</label>
+            <input type="radio" id="two_hours" name="study-time" value="2 hours">
+            <label for="two_hours" style="display:inline;">2 hours</label>
+            <input type="radio" id="three_hours" name="study-time" value="3 hours">
+            <label for="three_hours" style="display:inline;">3 hours</label>
+            <input type="radio" id="four_hours" name="study-time" value="4 hours">
+            <label for="four_hours" style="display:inline;">4 hours</label>
+            <br>
+            <label for="students">Number of students:</label>
+            <input type="number" id="students" name="number_of_students" min="1" max="6" required>
+
+            <p>Equipment needed:</p>
+            <input type="checkbox" id="screen" name="equipment" value="screen">
+            <label for="screen" style="display:inline;">Screen</label>
+            <input type="checkbox" id="whiteboard" name="equipment" value="whiteboard">
+            <label for="whiteboard" style="display:inline;">Whiteboard</label>
+            <br></br>
+            <input type="submit" value="Request Booking">
+            <input type="reset" value="Clear">
+        </form>
+    </div>
+
+    <div class="footer">
+        <p><a href="about.html">About Us</a> | <a href="contact.html">Contact Us</a></p>
+        <p>Email: <a href="mailto:s143646@student.squ.edu.om">s143646@student.squ.edu.om</a></p>
+        <p>(c) 2026 Sakani - Web Craft Team | Sultan Qaboos University</p>
+    </div>
+
+</body>
+</html>

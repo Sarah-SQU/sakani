@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sakani - Login</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        label {
+            display: inline-block;
+            width: 120px;
+            text-align: right;
+            margin-right: 10px;
+        }
+
+        input, select {
+            margin-bottom: 10px;
+            width: 200px;
+            padding: 5px;
+        }
+
+
+        form {
+            border: 1px solid #61714D;
+            padding: 15px;
+            width: 400px;
+            background-color: #EEF3E6;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .main {
+            text-align: center;
+        }
+        
+
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <!-- logo + site name -->
+        <img src="images/sakani_icon.PNG" alt="Sakani logo" id="logo">
+        <h1>Sakani</h1>
+        <p>Your dorm, made simple</p>
+    </div>
+
+    <div class="menu">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="checkin.html">Check-in</a></li>
+            <li><a href="study-rooms.html">Study Rooms</a></li>
+            <li><a href="laundry.html">Laundry</a></li>
+            <li><a href="bus.html">Bus Schedule</a></li>
+            <li><a href="room-change.html">Room Change</a></li>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="login.html">Login</a></li>
+        </ul>
+    </div>
+
+    <div class="main">
+        <h2>Login to <span class="highlight">Sakani</span></h2>
+        <p>Enter your university details to view the student housing services.</p>
+        <div class="login-box">
+            <form action="https://httpbin.org/get" method="get">
+                <label for="student-id">University ID:</label>
+                <input type="text" id="student-id" required>
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" required>
+
+                <label for="role">I am a:</label>
+                <select id="role" name="role">
+                    <option value="student">Student</option>
+                    <option value="supervisor">Supervisor</option>
+                </select>
+                <br><br>
+                <input type="submit" value="Login">
+                <input type="reset" value="Clear">
+            </form>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p><a href="about.html">About Us</a> | <a href="contact.html">Contact Us</a></p>
+        <p>Email: <a href="mailto:s143646@student.squ.edu.om">s143646@student.squ.edu.om</a></p>
+        <p>(c) 2026 Sakani - Web Craft Team | Sultan Qaboos University</p>
+    </div>
+
+</body>
+</html>
