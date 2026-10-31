@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sakani - Contact Us</title>
+    <link rel="stylesheet" href="css/style.css">
+ 
+    <!-- Internal CSS: these styles are for this page only -->
+    <style type="text/css">
+        form.contact {
+            background-color: white;
+            border: 2px solid #8FA870;
+            padding: 20px;
+        }
+ 
+        form.contact label {
+            color: #61714D;
+            font-weight: bold;
+        }
+ 
+        form.contact textarea {
+            width: 95%;
+        }
+ 
+        p.housing-note {
+            background-color: white;
+            border-left: 5px solid #D4A88C;
+            padding: 10px 15px;
+        }
+    </style>
+</head>
+<body>
+ 
+    <div class="header">
+        <!-- logo + site name -->
+        <img src="images/sakani_icon.PNG" alt="Sakani logo" id="logo">
+        <h1>Sakani</h1>
+        <p>Your dorm, made simple</p>
+    </div>
+ 
+    <div class="menu">
+        <!-- navigation links -->
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="checkin.html">Check-in</a></li>
+            <li><a href="study-rooms.html">Study Rooms</a></li>
+            <li><a href="laundry.html">Laundry</a></li>
+            <li><a href="bus.html">Bus Schedule</a></li>
+            <li><a href="room-change.html">Room Change</a></li>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="login.html">Login</a></li>
+        </ul>
+    </div>
+ 
+    <div class="main">
+        <!-- page content -->
+        <h2>Contact Us</h2>
+        <p>Do you have a question or a suggestion about the <span class="highlight">Sakani</span> website?
+           Fill in the form below and your message will be sent to our team's email.</p>
+ 
+        <p class="housing-note">For housing issues (rooms, maintenance or complaints),
+           please contact your unit supervisor.</p>
+ 
+        <form class="contact" method="post" action="mailto:s143646@student.squ.edu.om">
+            <label>Name:</label><br>
+            <input type="text" name="name" size="30"><br><br>
+ 
+            <label>Email:</label><br>
+            <input type="email" name="email" size="30"><br><br>
+ 
+            <label>You are a:</label><br>
+            <label><input type="radio" name="user_type" value="student" checked="checked"> Student</label>
+            <label><input type="radio" name="user_type" value="supervisor"> Supervisor</label><br><br>
+ 
+            <label>Topic:</label><br>
+            <select name="topic">
+                <option value="question">Question about the website</option>
+                <option value="suggestion">Suggestion</option>
+                <option value="problem">Report a problem in the website</option>
+                <option value="other">Other</option>
+            </select><br><br>
+ 
+            <label>Message:</label><br>
+            <textarea name="message" rows="5" cols="40"></textarea><br><br>
+ 
+            <input type="submit" value="Send Message">
+            <input type="reset" value="Clear">
+        </form>
+ 
+        <p style="color: #8FA870; font-size: 14px;">We will reply to your message as soon as possible.</p>
+    </div>
+ 
+    <div class="footer">
+        <!-- footer content -->
+        <p><a href="about.html">About Us</a> | <a href="contact.html">Contact Us</a></p>
+        <p>Email: <a href="mailto:s143646@student.squ.edu.om">s143646@student.squ.edu.om</a></p>
+        <p>(c) 2026 Sakani - Web Craft Team | Sultan Qaboos University</p>
+    </div>
+ 
+</body>
+</html>

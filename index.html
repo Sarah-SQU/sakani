@@ -5,17 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sakani - Home</title>
     <link rel="stylesheet" href="css/style.css">
+ 
+    <!-- Internal CSS: these styles are for this page only -->
+    <style type="text/css">
+        div.main h3 {
+            color: #61714D;
+            margin-top: 30px;
+        }
+ 
+        ul.features {
+            list-style-image: url(images/check.png);
+            line-height: 200%;
+        }
+ 
+        ol.steps {
+            list-style-type: decimal;
+            line-height: 180%;
+        }
+ 
+        p.intro {
+            font-size: 18px;
+            text-align: justify;
+        }
+    </style>
 </head>
-
 <body>
-
+ 
     <div class="header">
         <!-- logo + site name -->
         <img src="images/sakani_icon.PNG" alt="Sakani logo" id="logo">
         <h1>Sakani</h1>
         <p>Your dorm, made simple</p>
     </div>
-
+ 
     <div class="menu">
         <!-- navigation links -->
         <ul>
@@ -31,19 +53,40 @@
             <li><a href="login.html">Login</a></li>
         </ul>
     </div>
-
+ 
     <div class="main">
-        <!-- page content (changes in every page) -->
+        <!-- page content -->
         <h2>Welcome to <span class="highlight">Sakani</span></h2>
-        <p>This is temporary text. We will write the real Home content later.</p>
+        <p class="intro">Sakani is a website for the female students' housing at Sultan Qaboos University.
+           It brings the daily housing services together in one place, so students can do them
+           from their rooms, and supervisors can follow their units easily.</p>
+ 
+        <h3>What You Can Do with Sakani</h3>
+        <ul class="features">
+            <li><a href="checkin.html">Nightly Check-in</a> - sign in for the 9:00 PM check-in from your room.</li>
+            <li><a href="study-rooms.html">Study Room Booking</a> - book a study room at a free time.</li>
+            <li><a href="laundry.html">Laundry Booking</a> - choose a laundry time without waiting.</li>
+            <li><a href="bus.html">Bus Schedule</a> - see the bus routes and times for your housing complex.</li>
+            <li><a href="room-change.html">Room Change</a> - view available rooms and send a change request.</li>
+            <li><a href="dashboard.html">Supervisor Dashboard</a> - supervisors follow check-in and requests.</li>
+        </ul>
+ 
+        <h3>How to Start</h3>
+        <ol class="steps">
+            <li><a href="login.html">Log in</a> with your student account.</li>
+            <li>Choose the service you need from the menu.</li>
+            <li>Fill in the form and submit it.</li>
+        </ol>
+ 
+        <p style="color: #8FA870; font-style: italic;">New here? Learn more about our team on the <a href="about.html">About Us</a> page.</p>
     </div>
-
+ 
     <div class="footer">
         <!-- footer content -->
         <p><a href="about.html">About Us</a> | <a href="contact.html">Contact Us</a></p>
         <p>Email: <a href="mailto:s143646@student.squ.edu.om">s143646@student.squ.edu.om</a></p>
-        <p>(c)2026 Sakani - Web Craft Team | Sultan Qaboos University</p>
+        <p>(c) 2026 Sakani - Web Craft Team | Sultan Qaboos University</p>
     </div>
-
+ 
 </body>
 </html>
