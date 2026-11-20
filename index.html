@@ -1,92 +1,189 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sakani - Home</title>
-    <link rel="stylesheet" href="css/style.css">
- 
-    <!-- Internal CSS: these styles are for this page only -->
-    <style type="text/css">
-        div.main h3 {
-            color: #61714D;
-            margin-top: 30px;
-        }
- 
-        ul.features {
-            list-style-image: url(images/check.png);
-            line-height: 200%;
-        }
- 
-        ol.steps {
-            list-style-type: decimal;
-            line-height: 180%;
-        }
- 
-        p.intro {
-            font-size: 18px;
-            text-align: justify;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sakani - Home</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 </head>
-<body>
- 
-    <div class="header">
-        <!-- logo + site name -->
-        <img src="images/sakani_icon.PNG" alt="Sakani logo" id="logo">
-        <h1>Sakani</h1>
-        <p>Your dorm, made simple</p>
+<body class="bg-light">
+
+  <div class="container-fluid bg-success-subtle">
+    <div class="row align-items-center">
+      <div class="col-4 col-sm-3 col-lg-2 mt-3 mb-3">
+        <img src="images/sakani_icon.PNG" alt="Sakani logo" class="img-fluid mx-auto d-block">
+      </div>
+      <div class="col-8 col-sm-9 col-lg-10 mt-3 mb-3">
+        <h1 class="display-5 fw-bold text-success-emphasis mb-0">Sakani</h1>
+        <p class="fst-italic text-success-emphasis mb-0">Your dorm, made simple</p>
+      </div>
     </div>
- 
-    <div class="menu">
-        <!-- navigation links -->
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="checkin.html">Check-in</a></li>
-            <li><a href="study-rooms.html">Study Rooms</a></li>
-            <li><a href="laundry.html">Laundry</a></li>
-            <li><a href="bus.html">Bus Schedule</a></li>
-            <li><a href="room-change.html">Room Change</a></li>
-            <li><a href="dashboard.html">Dashboard</a></li>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="contact.html">Contact Us</a></li>
-            <li><a href="login.html">Login</a></li>
+  </div>
+
+  <nav class="navbar navbar-expand-lg bg-success navbar-dark">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainMenu">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Services</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="checkin.html">Nightly Check-in</a></li>
+              <li><a class="dropdown-item" href="study-rooms.html">Study Rooms</a></li>
+              <li><a class="dropdown-item" href="laundry.html">Laundry</a></li>
+              <li><a class="dropdown-item" href="bus.html">Bus Schedule</a></li>
+              <li><a class="dropdown-item" href="room-change.html">Room Change</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="dashboard.html">Supervisor Dashboard</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="questionnaire.html">Feedback</a></li>
+          <li class="nav-item"><a class="nav-link" href="calculate.html">Calculator</a></li>
+          <li class="nav-item"><a class="nav-link" href="funpage.html">Fun Page</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
         </ul>
+      </div>
     </div>
- 
-    <div class="main">
-        <!-- page content -->
-        <h2>Welcome to <span class="highlight">Sakani</span></h2>
-        <p class="intro">Sakani is a website for the female students' housing at Sultan Qaboos University.
-           It brings the daily housing services together in one place, so students can do them
-           from their rooms, and supervisors can follow their units easily.</p>
- 
-        <h3>What You Can Do with Sakani</h3>
-        <ul class="features">
-            <li><a href="checkin.html">Nightly Check-in</a> - sign in for the 9:00 PM check-in from your room.</li>
-            <li><a href="study-rooms.html">Study Room Booking</a> - book a study room at a free time.</li>
-            <li><a href="laundry.html">Laundry Booking</a> - choose a laundry time without waiting.</li>
-            <li><a href="bus.html">Bus Schedule</a> - see the bus routes and times for your housing complex.</li>
-            <li><a href="room-change.html">Room Change</a> - view available rooms and send a change request.</li>
-            <li><a href="dashboard.html">Supervisor Dashboard</a> - supervisors follow check-in and requests.</li>
+  </nav>
+
+  <!-- ===== Main content ===== -->
+  <div class="container mt-3 mb-3">
+
+    <h2 class="text-success">Welcome to <span class="fw-bold">Sakani</span></h2>
+    <p class="fs-5">Sakani is a website for the female students' housing at Sultan Qaboos University.
+      It brings the daily housing services together in one place, so students can do them
+      from their rooms, and supervisors can follow their units easily.</p>
+
+    <div class="row">
+      <div class="col-lg-8 mx-auto">
+        <div id="gallery" class="carousel slide mt-3 mb-3" data-bs-ride="carousel">
+          <div class="carousel-inner rounded">
+            <div class="carousel-item active" data-bs-interval="3000">
+              <img src="images/gallery1.jpg" class="d-block w-100" alt="Student housing building">
+            </div>
+            <div class="carousel-item" data-bs-interval="3000">
+              <img src="images/gallery2.jpg" class="d-block w-100" alt="Study room">
+            </div>
+            <div class="carousel-item" data-bs-interval="3000">
+              <img src="images/gallery3.jpg" class="d-block w-100" alt="Laundry room">
+            </div>
+          </div>
+          
+          <button class="carousel-control-prev" type="button" data-bs-target="#gallery" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#gallery" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <!-- Services list -->
+      <div class="col-md-7 mt-3">
+        <h3 class="text-success-emphasis">What You Can Do with Sakani</h3>
+        <ul class="list-group">
+          <li class="list-group-item"><span class="text-success fw-bold">&#10003;</span> <a href="checkin.html">Nightly Check-in</a> - sign in for the 9:00 PM check-in from your room.</li>
+          <li class="list-group-item"><span class="text-success fw-bold">&#10003;</span> <a href="study-rooms.html">Study Room Booking</a> - book a study room at a free time.</li>
+          <li class="list-group-item"><span class="text-success fw-bold">&#10003;</span> <a href="laundry.html">Laundry Booking</a> - choose a laundry time without waiting.</li>
+          <li class="list-group-item"><span class="text-success fw-bold">&#10003;</span> <a href="bus.html">Bus Schedule</a> - see the bus routes and times for your housing complex.</li>
+          <li class="list-group-item"><span class="text-success fw-bold">&#10003;</span> <a href="room-change.html">Room Change</a> - view available rooms and send a change request.</li>
+          <li class="list-group-item"><span class="text-success fw-bold">&#10003;</span> <a href="dashboard.html">Supervisor Dashboard</a> - supervisors follow check-in and requests.</li>
         </ul>
- 
-        <h3>How to Start</h3>
-        <ol class="steps">
-            <li><a href="login.html">Log in</a> with your student account.</li>
-            <li>Choose the service you need from the menu.</li>
-            <li>Fill in the form and submit it.</li>
+      </div>
+
+      <!-- How to start + links to the three new pages -->
+      <div class="col-md-5 mt-3">
+        <h3 class="text-success-emphasis">How to Start</h3>
+        <ol class="list-group list-group-numbered">
+          <li class="list-group-item"><a href="login.html">Log in</a> with your student account.</li>
+          <li class="list-group-item">Choose the service you need from the menu.</li>
+          <li class="list-group-item">Fill in the form and submit it.</li>
         </ol>
- 
-        <p style="color: #8FA870; font-style: italic;">New here? Learn more about our team on the <a href="about.html">About Us</a> page.</p>
+
+        <h3 class="text-success-emphasis mt-3">Try Our New Pages</h3>
+        <a href="questionnaire.html" class="btn btn-success mt-2">Feedback Questionnaire</a>
+        <a href="calculate.html" class="btn btn-outline-success mt-2">Laundry Calculator</a>
+        <a href="funpage.html" class="btn btn-outline-success mt-2">Fun Page</a>
+      </div>
     </div>
- 
-    <div class="footer">
-        <!-- footer content -->
-        <p><a href="about.html">About Us</a> | <a href="contact.html">Contact Us</a></p>
-        <p>Email: <a href="mailto:s143646@student.squ.edu.om">s143646@student.squ.edu.om</a></p>
-        <p>(c) 2026 Sakani - Web Craft Team | Sultan Qaboos University</p>
+
+    <p class="text-success fst-italic mt-3">New here? Learn more about our team on the <a href="about.html">About Us</a> page.</p>
+  </div>
+
+  <!-- ===== Moving welcome banner ===== -->
+  <div class="container-fluid bg-success text-white">
+    <div class="row">
+      <div class="col mt-2 mb-2 overflow-hidden text-nowrap">
+        <p id="banner" class="mb-0 fw-bold font-monospace"></p>
+      </div>
     </div>
- 
+  </div>
+
+  <!-- ===== Footer ===== -->
+  <div class="container-fluid bg-success-subtle text-success-emphasis text-center">
+    <div class="row">
+      <div class="col mt-3 mb-3">
+        <a href="about.html" class="text-success-emphasis">About Us</a> |
+        <a href="contact.html" class="text-success-emphasis">Contact Us</a> |
+        <a href="mailto:s143646@student.squ.edu.om" class="text-success-emphasis">s143646@student.squ.edu.om</a>
+        <p class="mb-0">&copy; 2026 Sakani - Web Craft Team | Sultan Qaboos University</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // ================= Moving welcome banner =================
+    var position = 0;  
+
+    function twoDigits(number) {
+      if (number < 10) {
+        return "0" + number;
+      }
+      return "" + number;
+    }
+
+    function buildMessage() {
+      var now = new Date();
+      var day = twoDigits(now.getDate());
+      var month = twoDigits(now.getMonth() + 1);   
+      var year = now.getFullYear();
+      var hours = twoDigits(now.getHours());
+      var minutes = twoDigits(now.getMinutes());
+      var seconds = twoDigits(now.getSeconds());
+
+      return "Welcome to the Sakani website! Today is " + day + "/" + month + "/" + year +
+             ", and the time is " + hours + ":" + minutes + ":" + seconds + "          ";
+    }
+
+    
+    function moveBanner() {
+      var message = buildMessage();
+
+      
+      var shown = message.substring(position) + message.substring(0, position);
+
+    
+      document.getElementById("banner").innerHTML = shown;
+
+  
+      position = position + 1;
+      if (position >= message.length) {
+        position = 0;
+      }
+    }
+
+    
+    setInterval(moveBanner, 200);
+    moveBanner(); 
+  </script>
+
 </body>
 </html>
