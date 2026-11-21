@@ -4,127 +4,160 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sakani - Laundry</title>
-    <link rel="stylesheet" href="css/style.css">
-    <style>
-        label {
-            display: inline-block;
-            width: 140px;
-        }
-        
-        form {
-            border: 1px solid #61714D;
-            padding: 15px;
-            width: 400px;
-            background-color: #EEF3E6
-        }
-        table {
-            border-collapse: collapse;
-            width: 80%;
-            margin-top: 10px;
-        }
-
-        th, td {
-            border: 1px solid black;
-            background-color: white;
-            border: 1px solid #6f8755;
-            padding: 12px;
-            text-align: left;
-        }
-
-        th {
-            background-color: #8FA870;
-        }
-
-        input, select {
-            margin-bottom: 10px;
-        }
-    </style>
-</head>
-<body>
-
-    <div class="header">
-        <!-- logo + site name -->
-        <img src="images/sakani_icon.PNG" alt="Sakani logo" id="logo">
-        <h1>Sakani</h1>
-        <p>Your dorm, made simple</p>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" defer></script>
+    <script src="js/forms.js" defer></script>
+  </head>
+  <body class="bg-light">
+    <div class="container-fluid bg-success-subtle">
+      <div class="row align-items-center">
+        <div class="col-4 col-sm-3 col-lg-2 py-3">
+          <img src="images/sakani_icon.PNG" alt="Sakani logo" class="img-fluid">
+        </div>
+        <div class="col-8 col-sm-9 col-lg-10 py-3">
+          <h1 class="display-5 fw-bold text-success-emphasis mb-0">Sakani</h1>
+          <p class="fst-italic mb-0">Your dorm, made simple</p>
+        </div>
+      </div>
     </div>
-
-    <div class="menu">
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="checkin.html">Check-in</a></li>
-            <li><a href="study-rooms.html">Study Rooms</a></li>
-            <li><a href="laundry.html">Laundry</a></li>
-            <li><a href="bus.html">Bus Schedule</a></li>
-            <li><a href="room-change.html">Room Change</a></li>
-            <li><a href="dashboard.html">Dashboard</a></li>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="contact.html">Contact Us</a></li>
-            <li><a href="login.html">Login</a></li>
-        </ul>
-    </div>
-
-    <div class="main">
-        <h2>Laundry Booking</h2>
-        <p>Choose a laundry location and a suitable time slot.</p>
-
-        <h3>Laundry Schedule</h3>
-        <table>
-            <tr><th>Location</th><th>Machine</th><th>Available Time</th></tr>
-            <tr><td>Building 1</td><td>Washer 1</td><td>9:00 AM</td></tr>
-            <tr><td>Building 1</td><td>Washer 2</td><td>11:00 AM</td></tr>
-            <tr><td>Building 2</td><td colspan="2">Check with the supervisor</td></tr>
+    <nav class="navbar navbar-expand-lg bg-success navbar-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">Sakani</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="menu">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Services</a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item" href="checkin.html">Check-in</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="study-rooms.html">Study Rooms</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="laundry.html">Laundry</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="room-change.html">Room Change</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="calculate.html">Calculator</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="questionnaire.html">Feedback</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="funpage.html">Fun Page</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="login.html">Login</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <main class="container my-4">
+      <h2 class="text-success">Laundry Booking</h2>
+      <p>Choose a laundry location and a suitable time slot.</p>
+      <h3 class="text-success">Laundry Schedule</h3>
+      <div class="table-responsive">
+        <table class="table table-bordered table-striped">
+          <thead class="table-success">
+            <tr>
+              <th>Location</th>
+              <th>Machine</th>
+              <th>Available Time</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Building 1</td>
+              <td>Washer 1</td>
+              <td>9:00 AM</td>
+            </tr>
+            <tr>
+              <td>Building 1</td>
+              <td>Washer 2</td>
+              <td>11:00 AM</td>
+            </tr>
+            <tr>
+              <td>Building 2</td>
+              <td colspan="2">Check with the supervisor</td>
+            </tr>
+          </tbody>
         </table>
-        <br>
-        <h3>Reserve a Time</h3><br>
-        <form action="https://httpbin.org/get" method="get">
-            <label for="laundry-name">Student name:</label>
-            <input type="text" id="laundry-name" name="student_name" required>
-            <br>
-            <label for="building">Choose a building:</label>
-            <select id="building" name="building" required>
-                <option value="">-- Select a building --</option>
-                <option value="Building 1">Building 1</option>
-                <option value="Building 2">Building 2</option>
-            </select>
-            <br>
-            <label for="machine">Machine number:</label>
-            <select id="machine" name="machine" required>
-                <option value="Washer 1">Washer 1</option>
-                <option value="Washer 2">Washer 2</option>
-            </select>
-            <br>
-            <label for="laundry-date">Date:</label>
-            <input type="date" id="laundry-date" name="laundry_date" required>
-            <br>
-            <label for="slot">Time slot:</label>
-            <select id="slot" name="time_slot">
-                <option value="9:00 AM">9:00 AM</option>
-                <option value="11:00 AM">11:00 AM</option>
-                <option value="1:00 PM">1:00 PM</option>
-            </select>
-            <br>
-            <label for="extras">Extras:</label>
-            <select id="extras" name="extras" multiple="multiple" size="3">
-                <option value="detergent">Detergent</option>
-                <option value="softener">Softener</option>
-                <option value="dryer">Dryer</option>
-            </select>
-            <br>
-            <label></label><em>(hold Ctrl to choose more than one)</em>
-            <br>
-
-            <input type="submit" value="Request Laundry Slot">
-            <input type="reset" value="Clear">
-            <button type="button">Check Availability</button>
-        </form>
-    </div>
-
-    <div class="footer">
-        <p><a href="about.html">About Us</a> | <a href="contact.html">Contact Us</a></p>
-        <p>Email: <a href="mailto:s143646@student.squ.edu.om">s143646@student.squ.edu.om</a></p>
-        <p>(c) 2026 Sakani - Web Craft Team | Sultan Qaboos University</p>
-    </div>
-
-</body>
+      </div>
+      <div class="row">
+        <div class="col-lg-7">
+          <div class="card mt-3">
+            <div class="card-body">
+              <h3 class="text-success">Reserve a Time</h3>
+              <form action="https://httpbin.org/get" method="get" class="needs-validation" novalidate>
+                <div class="mb-3">
+                  <label class="form-label" for="lname">Student name:</label>
+                  <input class="form-control" id="lname" name="student_name" required minlength="3">
+                  <div class="invalid-feedback">Enter your name.</div>
+                </div>
+                <div class="mb-3">
+                  <label class="form-label" for="building">Choose a building:</label>
+                  <select class="form-select" id="building" name="building" required>
+                    <option value="">Select building</option>
+                    <option>Building 1</option>
+                    <option>Building 2</option>
+                  </select>
+                  <div class="invalid-feedback">Choose a building.</div>
+                </div>
+                <div class="mb-3">
+                  <label class="form-label" for="machine">Machine number:</label>
+                  <select class="form-select" id="machine" name="machine" required>
+                    <option value="">Choose machine</option>
+                    <option>Washer 1</option>
+                    <option>Washer 2</option>
+                  </select>
+                </div>
+                <div class="mb-3">
+                  <label class="form-label" for="ldate">Date:</label>
+                  <input class="form-control" type="date" id="ldate" name="laundry_date" required>
+                </div>
+                <div class="mb-3">
+                  <label class="form-label" for="slot">Time slot:</label>
+                  <select class="form-select" id="slot" name="time_slot" required>
+                    <option value="">Choose time</option>
+                    <option>9:00 AM</option>
+                    <option>11:00 AM</option>
+                    <option>1:00 PM</option>
+                  </select>
+                </div>
+                <button class="btn btn-success">Request Laundry Slot</button>
+                <button type="reset" class="btn btn-outline-secondary">Clear</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="container-fluid bg-success-subtle text-success-emphasis text-center mt-5 py-3">
+      <p>
+        <a class="text-success-emphasis" href="about.html">About Us</a> |
+        <a class="text-success-emphasis" href="contact.html">Contact Us</a> |
+        <a class="text-success-emphasis" href="mailto:s143646@student.squ.edu.om">s143646@student.squ.edu.om</a>
+      </p>
+      <p class="mb-0">&copy; 2026 Sakani - Web Craft Team | Sultan Qaboos University</p>
+    </footer>
+  </body>
 </html>
+
