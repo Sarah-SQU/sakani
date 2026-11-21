@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sakani - Fun Page</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body class="bg-light">
+
+
+  <div class="container-fluid bg-success-subtle">
+    <div class="row align-items-center">
+      <div class="col-4 col-sm-3 col-lg-2 mt-3 mb-3">
+        <img src="images/sakani_icon.PNG" alt="Sakani logo" class="img-fluid mx-auto d-block">
+      </div>
+      <div class="col-8 col-sm-9 col-lg-10 mt-3 mb-3">
+        <h1 class="display-5 fw-bold text-success-emphasis mb-0">Sakani</h1>
+        <p class="fst-italic text-success-emphasis mb-0">Your dorm, made simple</p>
+      </div>
+    </div>
+  </div>
+
+  <nav class="navbar navbar-expand-lg bg-success navbar-dark">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainMenu">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Services</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="checkin.html">Nightly Check-in</a></li>
+              <li><a class="dropdown-item" href="study-rooms.html">Study Rooms</a></li>
+              <li><a class="dropdown-item" href="laundry.html">Laundry</a></li>
+              <li><a class="dropdown-item" href="bus.html">Bus Schedule</a></li>
+              <li><a class="dropdown-item" href="room-change.html">Room Change</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="dashboard.html">Supervisor Dashboard</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="questionnaire.html">Feedback</a></li>
+          <li class="nav-item"><a class="nav-link" href="calculate.html">Calculator</a></li>
+          <li class="nav-item"><a class="nav-link active" href="funpage.html">Fun Page</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== the game ===== -->
+  <div class="container mt-3 mb-3">
+    <div class="row">
+      <div class="col-lg-8 mx-auto">
+
+        <h2 class="text-success">Dorm Rules Puzzle</h2>
+        <p class="fs-5">Put the words in the right order to build a dorm rule, then press <span class="fw-bold">Check</span>.</p>
+
+        <div class="card mt-3 mb-3">
+          <div class="card-header bg-success text-white fw-bold">
+            <!-- round number and score -->
+            <span id="round"></span>
+            <span class="badge bg-light text-success float-end" id="score"></span>
+          </div>
+          <div class="card-body">
+
+            <!-- the mixed words -->
+            <p class="text-muted mb-1">Mixed words (click to use):</p>
+            <div id="wordPool" class="mb-3"></div>
+
+            <!-- the sentence the player is building -->
+            <p class="text-muted mb-1">Your sentence (click a word to send it back):</p>
+            <div id="answerBox" class="border rounded bg-white p-3 mb-3"></div>
+
+            <!-- message box -->
+            <div id="message" class="alert d-none"></div>
+
+            <button type="button" class="btn btn-success" id="checkBtn" onclick="checkAnswer()">Check</button>
+            <button type="button" class="btn btn-outline-secondary" onclick="startSentence()">Start Over</button>
+            <button type="button" class="btn btn-outline-success d-none" id="nextBtn" onclick="nextSentence()">Next Rule</button>
+            <button type="button" class="btn btn-warning d-none" id="againBtn" onclick="restartGame()">Play Again</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== Footer ===== -->
+  <div class="container-fluid bg-success-subtle text-success-emphasis text-center">
+    <div class="row">
+      <div class="col mt-3 mb-3">
+        <a href="about.html" class="text-success-emphasis">About Us</a> |
+        <a href="contact.html" class="text-success-emphasis">Contact Us</a> |
+        <a href="mailto:s143646@student.squ.edu.om" class="text-success-emphasis">s143646@student.squ.edu.om</a>
+        <p class="mb-0">&copy; 2026 Sakani - Web Craft Team | Sultan Qaboos University</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // ===== Dorm Rules Puzzle =====
+    // The player clicks the mixed words in the right order to build a dorm rule.
+
+    //The correct rules
+    var rules = [
+      "Check in before ten PM every night",
+      "Book a study room before you go",
+      "Keep the laundry room clean after use",
+      "Take the green bus to the colleges",
+      "Ask your supervisor to change your room"
+    ];
+
+    //The words of each rule
+    var mixed = [
+      ["night", "before", "Check", "PM", "every", "in", "ten"],
+      ["room", "you", "Book", "go", "a", "before", "study"],
+      ["clean", "use", "the", "Keep", "after", "room", "laundry"],
+      ["bus", "the", "colleges", "Take", "to", "green", "the"],
+      ["change", "room", "your", "Ask", "to", "supervisor", "your"]
+    ];
+
+    var current = 0;          // number of the current rule
+    var score = 0;            // number of correct answers
+    var availableWords = [];  // words not used yet
+    var chosenWords = [];     // words the player used
+    var solved = false;       // true when the rule is solved
+
+    //Returns a copy of the list without the word at this index
+    function removeWord(list, index) {
+      var newList = [];
+      for (var i = 0; i < list.length; i++) {
+        if (i != index) {
+          newList.push(list[i]);
+        }
+      }
+      return newList;
+    }
+
+    //Starts from the beginning
+    function startSentence() {
+      availableWords = mixed[current].slice(0);  // copy the mixed words
+      chosenWords = [];
+      solved = false;
+      hideMessage();
+
+      //show Check, hide Next Rule and Play Again
+      document.getElementById("checkBtn").className = "btn btn-success";
+      document.getElementById("nextBtn").className = "btn btn-outline-success d-none";
+      document.getElementById("againBtn").className = "btn btn-warning d-none";
+      showWords();
+    }
+
+    //words buttons
+    function showWords() {
+      //each available word
+      var availableHTML = "";
+      for (var i = 0; i < availableWords.length; i++) {
+        availableHTML += "<button type='button' class='btn btn-outline-success m-1' onclick='pickWord(" + i + ")'>" +
+                         availableWords[i] + "</button>";
+      }
+      document.getElementById("wordPool").innerHTML = availableHTML;
+
+      //each chosen word
+      var chosenHTML = "";
+      for (var k = 0; k < chosenWords.length; k++) {
+        chosenHTML += "<button type='button' class='btn btn-success m-1' onclick='returnWord(" + k + ")'>" +
+                      chosenWords[k] + "</button>";
+      }
+      //show a hint if nothing is chosen
+      if (chosenHTML == "") {
+        chosenHTML = "<span class='text-muted fst-italic'>Your sentence will appear here...</span>";
+      }
+      document.getElementById("answerBox").innerHTML = chosenHTML;
+
+      //update rule number and score
+      document.getElementById("round").innerHTML = "Rule " + (current + 1) + " of " + rules.length;
+      document.getElementById("score").innerHTML = "Score: " + score;
+    }
+
+    //move the word down
+    function pickWord(index) {
+      if (solved) { return; }
+      chosenWords.push(availableWords[index]);
+      availableWords = removeWord(availableWords, index);
+      hideMessage();
+      showWords();
+    }
+
+    //Sends a word back up
+    function returnWord(index) {
+      if (solved) { return; }
+      availableWords.push(chosenWords[index]);
+      chosenWords = removeWord(chosenWords, index);
+      hideMessage();
+      showWords();
+    }
+
+    //Checks if the sentence correct
+    function checkAnswer() {
+      if (solved) { return; }
+
+      if (availableWords.length > 0) {
+        //some words are not used yet
+        showMessage("Use all the words first!", "alert-warning");
+      } else if (chosenWords.join(" ") == rules[current]) {
+        //correct answer
+        solved = true;
+        score = score + 1;
+        showWords();
+        showMessage("Correct! Well done, you know the Sakani rules.", "alert-success");
+        document.getElementById("checkBtn").className = "btn btn-success d-none";
+        document.getElementById("nextBtn").className = "btn btn-outline-success";
+      } else {
+        // wrong answer
+        showMessage("Not yet. Click a word to send it back and try again.", "alert-danger");
+      }
+    }
+
+    //goes to the next rule (or ends the game after the last rule)
+    function nextSentence() {
+      current = current + 1;
+      if (current < rules.length) {
+        startSentence();
+      } else {
+        // show final score
+        document.getElementById("wordPool").innerHTML = "";
+        document.getElementById("answerBox").innerHTML = "<span class='fw-bold text-success'>Game over!</span>";
+        document.getElementById("round").innerHTML = "Finished";
+        showMessage("You solved " + score + " out of " + rules.length + " rules. Great job!", "alert-success");
+        document.getElementById("nextBtn").className = "btn btn-outline-success d-none";
+        document.getElementById("againBtn").className = "btn btn-warning";
+      }
+    }
+
+    // Starts again
+    function restartGame() {
+      current = 0;
+      score = 0;
+      startSentence();
+    }
+
+    // Shows alert
+    function showMessage(text, colour) {
+      var box = document.getElementById("message");
+      box.className = "alert " + colour;
+      box.innerHTML = text;
+    }
+
+    // Hides the message
+    function hideMessage() {
+      document.getElementById("message").className = "alert d-none";
+    }
+
+    // Start the game when the page opens
+    startSentence();
+  </script>
+
+</body>
+</html>
