@@ -1,276 +1,196 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sakani - Supervisor Dashboard</title>
-    <link rel="stylesheet" href="css/style.css">
- 
-    <!-- styles used only in this page -->
-    <style type="text/css">
-        /* ===== Welcome box ===== */
-        div.welcome {
-            background-color: white;
-            border: 2px solid #8FA870;
-            border-left: 8px solid #61714D;
-            padding: 15px 25px;
-            margin-bottom: 30px;
-        }
- 
-        p.welcome-title {
-            font-size: 22px;
-            font-weight: bold;
-            color: #61714D;
-            margin: 0px;
-        }
- 
-        p.welcome-units {
-            font-size: 18px;
-            color: #8FA870;
-            font-weight: bold;
-        }
- 
-        /* ===== Section titles ===== */
-        h3.section {
-            color: #61714D;
-            font-size: 22px;
-            border-bottom: 3px solid #8FA870;
-            padding-bottom: 8px;
-        }
- 
-        /* ===== Separator between the two tables ===== */
-        hr.divider {
-            border: 0px;
-            border-top: 3px dashed #8FA870;
-            margin: 40px 0px;
-        }
- 
-        /* ===== Tables ===== */
-        table.dash {
-            width: 100%;
-            background-color: white;
-            border-color: #8FA870;
-        }
- 
-        table.dash caption {
-            font-size: 16px;
-            font-style: italic;
-            color: #8FA870;
-            margin-bottom: 8px;
-        }
- 
-        table.dash th {
-            background-color: #61714D;
-            color: white;
-        }
- 
-        th.sub {
-            background-color: #8FA870;
-        }
- 
-        td.unit {
-            background-color: #C9DBB1;
-            font-weight: bold;
-        }
- 
-        td.leave {
-            color: #61714D;
-            font-style: italic;
-        }
- 
-        td.missing {
-            color: #B5523B;
-            font-weight: bold;
-        }
- 
-        td.pending {
-            color: #D4A88C;
-            font-weight: bold;
-        }
- 
-        tr.total td {
-            background-color: #C9DBB1;
-            font-weight: bold;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sakani - Supervisor Dashboard</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 </head>
-<body>
- 
-    <div class="header">
-        <!-- logo + site name -->
-        <img src="images/sakani_icon.PNG" alt="Sakani logo" id="logo">
-        <h1>Sakani</h1>
-        <p>Your dorm, made simple</p>
+<body class="bg-light">
+
+
+  <div class="container-fluid bg-success-subtle">
+    <div class="row align-items-center">
+      <div class="col-4 col-sm-3 col-lg-2 mt-3 mb-3">
+        <img src="images/sakani_icon.PNG" alt="Sakani logo" class="img-fluid mx-auto d-block">
+      </div>
+      <div class="col-8 col-sm-9 col-lg-10 mt-3 mb-3">
+        <h1 class="display-5 fw-bold text-success-emphasis mb-0">Sakani</h1>
+        <p class="fst-italic text-success-emphasis mb-0">Your dorm, made simple</p>
+      </div>
     </div>
- 
-    <div class="menu">
-        <!-- navigation links -->
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="checkin.html">Check-in</a></li>
-            <li><a href="study-rooms.html">Study Rooms</a></li>
-            <li><a href="laundry.html">Laundry</a></li>
-            <li><a href="bus.html">Bus Schedule</a></li>
-            <li><a href="room-change.html">Room Change</a></li>
-            <li><a href="dashboard.html">Dashboard</a></li>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="contact.html">Contact Us</a></li>
-            <li><a href="login.html">Login</a></li>
+  </div>
+
+  
+  <nav class="navbar navbar-expand-lg bg-success navbar-dark">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainMenu">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle active" href="#" data-bs-toggle="dropdown">Services</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="checkin.html">Nightly Check-in</a></li>
+              <li><a class="dropdown-item" href="study-rooms.html">Study Rooms</a></li>
+              <li><a class="dropdown-item" href="laundry.html">Laundry</a></li>
+              <li><a class="dropdown-item" href="bus.html">Bus Schedule</a></li>
+              <li><a class="dropdown-item" href="room-change.html">Room Change</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item active" href="dashboard.html">Supervisor Dashboard</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="questionnaire.html">Feedback</a></li>
+          <li class="nav-item"><a class="nav-link" href="calculate.html">Calculator</a></li>
+          <li class="nav-item"><a class="nav-link" href="funpage.html">Fun Page</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
         </ul>
+      </div>
     </div>
- 
-    <div class="main">
-        <!-- page content -->
-        <h2>Supervisor Dashboard</h2>
- 
-        <!-- ===== Welcome box ===== -->
-        <div class="welcome">
-            <p class="welcome-title">Welcome, Supervisor</p>
-            <p class="welcome-units">Housing Complex 3 - Units A and B</p>
-            <p>Follow tonight's <b>9:00 PM check-in</b> and review the
-               <b>room change requests</b> of your units.</p>
-        </div>
- 
-        <!-- ===== Section 1: Check-in summary ===== -->
-        <h3 class="section">Tonight's Check-in</h3>
- 
-        <table class="dash" border="2" cellspacing="3" cellpadding="10">
-            <caption>Check-in status for each floor</caption>
- 
-            <tr>
-                <th rowspan="2">Unit</th>
-                <th rowspan="2">Floor</th>
-                <th rowspan="2">Total Students</th>
-                <th colspan="3">Check-in Status</th>
-            </tr>
-            <tr>
-                <th class="sub">Checked In</th>
-                <th class="sub">On Approved Leave</th>
-                <th class="sub">Not Checked In</th>
-            </tr>
- 
-            <!-- Unit A -->
-            <tr>
-                <td class="unit" rowspan="3" align="center">Unit A</td>
-                <td align="center">1</td>
-                <td align="center">34</td>
-                <td align="center">30</td>
-                <td class="leave" align="center">2</td>
-                <td class="missing" align="center">2</td>
-            </tr>
-            <tr>
-                <td align="center">2</td>
-                <td align="center">33</td>
-                <td align="center">31</td>
-                <td class="leave" align="center">1</td>
-                <td class="missing" align="center">1</td>
-            </tr>
-            <tr>
-                <td align="center">3</td>
-                <td align="center">33</td>
-                <td align="center">29</td>
-                <td class="leave" align="center">3</td>
-                <td class="missing" align="center">1</td>
-            </tr>
- 
-            <!-- Unit B -->
-            <tr>
-                <td class="unit" rowspan="3" align="center">Unit B</td>
-                <td align="center">1</td>
-                <td align="center">35</td>
-                <td align="center">33</td>
-                <td class="leave" align="center">1</td>
-                <td class="missing" align="center">1</td>
-            </tr>
-            <tr>
-                <td align="center">2</td>
-                <td align="center">32</td>
-                <td align="center">28</td>
-                <td class="leave" align="center">2</td>
-                <td class="missing" align="center">2</td>
-            </tr>
-            <tr>
-                <td align="center">3</td>
-                <td align="center">33</td>
-                <td align="center">31</td>
-                <td class="leave" align="center">2</td>
-                <td class="missing" align="center">0</td>
-            </tr>
- 
-            <tr class="total">
-                <td colspan="2" align="center">Total</td>
-                <td align="center">200</td>
-                <td align="center">182</td>
-                <td align="center">11</td>
-                <td align="center">7</td>
-            </tr>
-        </table>
- 
-        <!-- ===== Separator ===== -->
-        <hr class="divider">
- 
-        <!-- ===== Section 2: Room change requests ===== -->
-        <h3 class="section">Requests Waiting for Approval</h3>
- 
-        <table class="dash" border="2" cellspacing="3" cellpadding="10">
-            <caption>Room change requests from your units</caption>
- 
-            <tr>
-                <th rowspan="2">Student Name</th>
-                <th colspan="2">Room</th>
-                <th rowspan="2">Reason</th>
-                <th rowspan="2">Request Date</th>
-                <th rowspan="2">Status</th>
-            </tr>
-            <tr>
-                <th class="sub">Current</th>
-                <th class="sub">Requested</th>
-            </tr>
- 
-            <tr>
-                <td>Maryam Salim</td>
-                <td align="center">A-105</td>
-                <td align="center">A-210</td>
-                <td>Wants to live with her sister</td>
-                <td align="center">25 Oct 2026</td>
-                <td class="pending" align="center">Pending</td>
-            </tr>
-            <tr>
-                <td>Aisha Hamed</td>
-                <td align="center">A-302</td>
-                <td align="center">B-115</td>
-                <td>Closer to the study rooms</td>
-                <td align="center">26 Oct 2026</td>
-                <td class="pending" align="center">Pending</td>
-            </tr>
-            <tr>
-                <td>Fatma Nasser</td>
-                <td align="center">B-208</td>
-                <td align="center">B-104</td>
-                <td>Prefers a lower floor</td>
-                <td align="center">27 Oct 2026</td>
-                <td class="pending" align="center">Pending</td>
-            </tr>
-            <tr>
-                <td>Noor Khalid</td>
-                <td align="center">B-301</td>
-                <td align="center">A-203</td>
-                <td>Noise in the current room</td>
-                <td align="center">28 Oct 2026</td>
-                <td class="pending" align="center">Pending</td>
-            </tr>
-        </table>
- 
-        <!-- Inline CSS example -->
-        <p style="color: #8FA870; font-size: 14px;">The names and numbers on this page are sample data for the prototype.</p>
+  </nav>
+
+  <!-- ===== Main content ===== -->
+  <div class="container mt-3 mb-3">
+
+    <h2 class="text-success">Supervisor Dashboard</h2>
+
+    <div class="alert alert-success">
+      <h4 class="alert-heading">Welcome, Supervisor</h4>
+      <p class="fw-bold">Housing Complex 3 - Units A and B</p>
+      <p class="mb-0">Follow tonight's <span class="fw-bold">9:00 PM check-in</span> and review the
+        <span class="fw-bold">room change requests</span> of your units.</p>
     </div>
- 
-    <div class="footer">
-        <!-- footer content -->
-        <p><a href="about.html">About Us</a> | <a href="contact.html">Contact Us</a></p>
-        <p>Email: <a href="mailto:s143646@student.squ.edu.om">s143646@student.squ.edu.om</a></p>
-        <p>(c) 2026 Sakani - Web Craft Team | Sultan Qaboos University</p>
+
+    <!-- ===== Check-in table ===== -->
+    <h3 class="text-success-emphasis mt-3">Tonight's Check-in</h3>
+    <p class="text-muted">Check-in status for each floor</p>
+
+    <div class="table-responsive">
+      <table class="table table-bordered text-center">
+        <thead class="table-success">
+          <tr>
+            <th rowspan="2">Unit</th>
+            <th rowspan="2">Floor</th>
+            <th rowspan="2">Total Students</th>
+            <th colspan="3">Check-in Status</th>
+          </tr>
+          <tr>
+            <th>Checked In</th>
+            <th>On Approved Leave</th>
+            <th>Not Checked In</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Unit A -->
+          <tr>
+            <td class="table-success fw-bold" rowspan="3">Unit A</td>
+            <td>1</td><td>34</td><td>30</td>
+            <td class="fst-italic">2</td>
+            <td class="text-danger fw-bold">2</td>
+          </tr>
+          <tr>
+            <td>2</td><td>33</td><td>31</td>
+            <td class="fst-italic">1</td>
+            <td class="text-danger fw-bold">1</td>
+          </tr>
+          <tr>
+            <td>3</td><td>33</td><td>29</td>
+            <td class="fst-italic">3</td>
+            <td class="text-danger fw-bold">1</td>
+          </tr>
+
+          <!-- Unit B -->
+          <tr>
+            <td class="table-success fw-bold" rowspan="3">Unit B</td>
+            <td>1</td><td>35</td><td>33</td>
+            <td class="fst-italic">1</td>
+            <td class="text-danger fw-bold">1</td>
+          </tr>
+          <tr>
+            <td>2</td><td>32</td><td>28</td>
+            <td class="fst-italic">2</td>
+            <td class="text-danger fw-bold">2</td>
+          </tr>
+          <tr>
+            <td>3</td><td>33</td><td>31</td>
+            <td class="fst-italic">2</td>
+            <td class="text-danger fw-bold">0</td>
+          </tr>
+
+          <!-- Total row -->
+          <tr class="table-success fw-bold">
+            <td colspan="2">Total</td>
+            <td>200</td><td>182</td><td>11</td><td>7</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
- 
+
+    <!-- Separator -->
+    <hr class="mt-3 mb-3">
+
+    <!-- ===== Room change requests ===== -->
+    <h3 class="text-success-emphasis">Requests Waiting for Approval</h3>
+    <p class="text-muted">Room change requests from your units</p>
+
+    <div class="table-responsive">
+      <table class="table table-bordered text-center">
+        <thead class="table-success">
+          <tr>
+            <th rowspan="2">Student Name</th>
+            <th colspan="2">Room</th>
+            <th rowspan="2">Reason</th>
+            <th rowspan="2">Request Date</th>
+            <th rowspan="2">Status</th>
+          </tr>
+          <tr>
+            <th>Current</th>
+            <th>Requested</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Maryam Salim</td><td>A-105</td><td>A-210</td>
+            <td>Wants to live with her sister</td><td>25 Oct 2026</td>
+            <td class="text-warning fw-bold">Pending</td>
+          </tr>
+          <tr>
+            <td>Aisha Hamed</td><td>A-302</td><td>B-115</td>
+            <td>Closer to the study rooms</td><td>26 Oct 2026</td>
+            <td class="text-warning fw-bold">Pending</td>
+          </tr>
+          <tr>
+            <td>Fatma Nasser</td><td>B-208</td><td>B-104</td>
+            <td>Prefers a lower floor</td><td>27 Oct 2026</td>
+            <td class="text-warning fw-bold">Pending</td>
+          </tr>
+          <tr>
+            <td>Noor Khalid</td><td>B-301</td><td>A-203</td>
+            <td>Noise in the current room</td><td>28 Oct 2026</td>
+            <td class="text-warning fw-bold">Pending</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+
+  <!-- ===== Footer ===== -->
+  <div class="container-fluid bg-success-subtle text-success-emphasis text-center">
+    <div class="row">
+      <div class="col mt-3 mb-3">
+        <a href="about.html" class="text-success-emphasis">About Us</a> |
+        <a href="contact.html" class="text-success-emphasis">Contact Us</a> |
+        <a href="mailto:s143646@student.squ.edu.om" class="text-success-emphasis">s143646@student.squ.edu.om</a>
+        <p class="mb-0">&copy; 2026 Sakani - Web Craft Team | Sultan Qaboos University</p>
+      </div>
+    </div>
+  </div>
+
 </body>
 </html>
